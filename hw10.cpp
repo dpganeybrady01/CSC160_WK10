@@ -20,7 +20,7 @@ vector<string> splitLine(string line) {
   {
       result.push_back(cell);
   }
-  return result;
+  return result; 
 }
 
 
@@ -94,7 +94,7 @@ void writeImage(vector<vector<double>> data) {
            input and find the snow depth value for that lat/lon
            and return it
 */
-double getSnowDepthValue(double lat, double lon, vector<vetor<double>> data) {
+double getSnowDepthValue(double lat, double lon, vector<vector<double>> data) {
   double max_lat = 41.49181240222188
   double max_lon = -101.27628856757693
   double min_lat = 36.69578069273795
@@ -105,8 +105,8 @@ double getSnowDepthValue(double lat, double lon, vector<vetor<double>> data) {
   double delta_x = (max_lon - min_lon) / width;
   double y = (lat - min_lat) / delta_y;
   double x = (lon - min_lon) / delta_x;
-  // int index_x = int(x);
-  // int index_y = int(y);
+  int index_x = int(x);
+  int index_y = int(y);
   // cout << x << ", " << y << " .. " << index_x << ", " << index_y << endl;
   double value = data[index_y][index_x];
   return value; 
@@ -125,3 +125,4 @@ int main(){
   cout << "Snow depth for the second point is " << val2 << endl;
   
 }
+ 
